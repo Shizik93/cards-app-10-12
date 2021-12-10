@@ -1,0 +1,28 @@
+.checkbox {
+    box-sizing: content-box;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #636e54;
+    border: black solid 1px;
+}
+
+.checkbox:checked {
+
+    appearance: none;
+    background-image: url("checked.png");
+
+}
+
+.checkbox:focus {
+
+    outline: red solid 1px;
+
+}
+
+.spanClassName {
+
+}
+
+
+

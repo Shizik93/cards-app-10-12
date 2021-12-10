@@ -1,0 +1,9 @@
+.test{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-top: 15px;
+}
+.test input{
+    margin-top: 15px;
+}
