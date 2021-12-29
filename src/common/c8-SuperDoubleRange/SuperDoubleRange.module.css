@@ -1,6 +1,6 @@
 input[type=range].double {
     left: 0;
-    top: 7px;
+    top: 0px;
     position: absolute;
     width: 200px;
     pointer-events: none;
