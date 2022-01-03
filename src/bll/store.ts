@@ -1,19 +1,17 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
-import {errorReducers} from "./reducers/error-reducers";
+import {errorReducer} from "./reducers/error-reducer";
 import {loginReducer} from "./reducers/login-reducer";
-import {newPasswordReducers} from "./reducers/newPassword-reducers";
-import {profileReducers} from "./reducers/profile-reducers";
-import {registrationReducers} from "./reducers/registration-reducers";
-import {restorePasswordReducers} from "./reducers/restorePassword-reducers";
+import {profileReducer} from "./reducers/profile-reducer";
+import {registrationReducer} from "./reducers/registration-reducer";
+import {restorePasswordReducer} from "./reducers/restorePassword-reducer";
 import thunkMiddleware from 'redux-thunk'
 
 const rootReducer=combineReducers({
-    error:errorReducers,
+    error:errorReducer,
     login:loginReducer,
-    newPassword:newPasswordReducers,
-    profile:profileReducers,
-    registration:registrationReducers,
-    restorePassword:restorePasswordReducers
+    profile:profileReducer,
+    registration:registrationReducer,
+    restorePassword:restorePasswordReducer
 })
 export const store=createStore(rootReducer,applyMiddleware(thunkMiddleware))
 export type AppRootStateType=ReturnType<typeof rootReducer>

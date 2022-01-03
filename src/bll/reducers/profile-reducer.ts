@@ -1,6 +1,6 @@
 const initialState:any=[]
 
-export const profileReducers=(state:any=initialState,action:any)=>{
+export const profileReducer=(state:any=initialState, action:any)=>{
     switch (action.type){
         case '':{
             return state

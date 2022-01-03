@@ -12,7 +12,7 @@ type initialStateType = {
 
 }
 
-export const registrationReducers = (state: initialStateType = initialState, action: registrationReducersActionsType): initialStateType => {
+export const registrationReducer = (state: initialStateType = initialState, action: registrationReducersActionsType): initialStateType => {
     switch (action.type) {
         case 'registration-reducers/SET-REGISTERED-SUCCESSFULLY': {
             return {...state, isRegistered: action.successful}

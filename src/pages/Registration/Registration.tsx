@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import style from './Registration.module.css'
 import SuperInputText from "../../common/c1-SuperInputText/SuperInputText";
 import SuperButton from "../../common/c2-SuperButton/SuperButton";
-import {RegisteredUserTC, setRegistrationError} from "../../bll/reducers/registration-reducers";
+import {RegisteredUserTC, setRegistrationError} from "../../bll/reducers/registration-reducer";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {Navigate} from "react-router-dom";

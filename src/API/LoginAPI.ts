@@ -1,9 +1,4 @@
-import axios from "axios";
-
-const initial = axios.create({
-    baseURL: 'https://neko-back.herokuapp.com/2.0',
-    withCredentials: true
-})
+import { initial } from "./InitialData"
 
 export const LoginAPI = {
     setLogin(email: string, password: string, rememberMe: boolean) {

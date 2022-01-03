@@ -64,7 +64,7 @@ export const Login = () => {
                     </SuperCheckbox>
                 </div>
                 <div>
-                    <NavLink to={PATH.NEW_PASSWORD}>Forgot Password</NavLink>
+                    <NavLink to={PATH.RESTORE_PASSWORD}>Forgot Password</NavLink>
                 </div>
                 <div>
                     <SuperButton onClick={login}>Login</SuperButton></div>

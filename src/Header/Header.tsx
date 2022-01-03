@@ -7,11 +7,12 @@ import {AppRootStateType} from "../bll/store";
 export const PATH = {
     ERROR_404: '/error404',
     LOGIN: '/login',
-    NEW_PASSWORD: '/new-password',
+    RESTORE_PASSWORD: '/restore-password',
     PROFILE: '/profile',
     REGISTRATION: '/registration',
     TEST: '/test',
-    CHECK_EMAIL: '/check-email'
+    CHECK_EMAIL: '/check-email',
+    NEW_PASSWORD:'/new-password/:tokenId',
 
 }
 

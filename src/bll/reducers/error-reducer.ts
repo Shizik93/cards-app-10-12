@@ -1,6 +1,6 @@
 const initialState:any=[]
 
-export const restorePasswordReducers=(state:any=initialState,action:any)=>{
+export const errorReducer=(state:any=initialState, action:any)=>{
     switch (action.type){
         case '':{
             return state
