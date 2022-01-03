@@ -2,7 +2,7 @@ import {Dispatch} from "redux";
 import {LoginAPI} from "../../API/LoginAPI";
 
 const initialState: initialStateType = {
-    isAuth:false,
+    isAuth: false,
     _id: null,
     email: null,
     name: null,
@@ -11,7 +11,7 @@ const initialState: initialStateType = {
     error: ''
 }
 type initialStateType = {
-    isAuth:boolean
+    isAuth: boolean
     _id: string | null;
     email: string | null;
     name: string | null;
@@ -30,7 +30,7 @@ export const loginReducer = (state: initialStateType = initialState, action: Red
             return state
     }
 }
-type ReducerType = setLoginType|logoutUserType
+type ReducerType = setLoginType | logoutUserType
 const setLogin = (data: initialStateType) => {
     return {
         type: 'login-reducer/SET-LOGIN',
@@ -42,11 +42,11 @@ export const setLoginTC = (email: string, password: string, rememberMe: boolean)
     LoginAPI.setLogin(email, password, rememberMe).then((res) => {
         console.dir(res)
         dispatch(setLogin({
-            isAuth:true,
+            isAuth: true,
             _id: res.data._id,
             email: res.data.email,
             name: res.data.name,
-            avatar: res.data.avatar?res.data.avatar:null,
+            avatar: res.data.avatar ? res.data.avatar : null,
             publicCardPacksCount: res.data.publicCardPacksCount,
             error: res.data.error
         }))
@@ -54,29 +54,29 @@ export const setLoginTC = (email: string, password: string, rememberMe: boolean)
 
 }
 
-const logoutUser=()=>{
-    return{
-        type:'login-reducer/LOGOUT-USER',
-        data:initialState
-    }as const
+const logoutUser = () => {
+    return {
+        type: 'login-reducer/LOGOUT-USER',
+        data: initialState
+    } as const
 }
-type logoutUserType=ReturnType<typeof logoutUser>
-export const logoutUserTC=()=>(dispatch:Dispatch)=>{
-    LoginAPI.logout().then((res)=>{
+type logoutUserType = ReturnType<typeof logoutUser>
+export const logoutUserTC = () => (dispatch: Dispatch) => {
+    LoginAPI.logout().then((res) => {
         console.dir(res)
         dispatch(logoutUser())
     })
 
 }
-export const authMeTC=()=>(dispatch:Dispatch)=>{
-    LoginAPI.me().then((res)=>{
+export const authMeTC = () => (dispatch: Dispatch) => {
+    LoginAPI.me().then((res) => {
         console.dir(res)
         dispatch(setLogin({
-            isAuth:true,
+            isAuth: true,
             _id: res.data._id,
             email: res.data.email,
             name: res.data.name,
-            avatar: res.data.avatar?res.data.avatar:null,
+            avatar: res.data.avatar ? res.data.avatar : null,
             publicCardPacksCount: res.data.publicCardPacksCount,
             error: res.data.error
         }))

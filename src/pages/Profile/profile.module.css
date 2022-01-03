@@ -1,4 +1,4 @@
-.registration{
+.profile{
     border-radius: 20px;
     margin-top: 50px;
     display: flex;
@@ -6,10 +6,6 @@
     align-items: center;
     flex-direction: column;
     width: 413px;
-    height: 600px;
+    height: 540px;
     background: #3bb365;
-}
-.error{
-    text-align: center;
-    width: 300px;
 }

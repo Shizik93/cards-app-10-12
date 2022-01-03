@@ -1,5 +1,7 @@
 import {NavLink} from "react-router-dom";
 import SuperButton from "../common/c2-SuperButton/SuperButton";
+import {useSelector} from "react-redux";
+import {AppRootStateType} from "../bll/store";
 
 
 export const PATH = {
@@ -14,15 +16,11 @@ export const PATH = {
 }
 
 export const Header = () => {
+    const isAuth = useSelector((state: AppRootStateType) => state.login.isAuth)
     return (
         <div>
-            <SuperButton><NavLink to={PATH.LOGIN}>Login </NavLink></SuperButton>
-            <SuperButton><NavLink to={PATH.NEW_PASSWORD}>New-Password </NavLink></SuperButton>
-            <SuperButton><NavLink to={PATH.PROFILE}>Profile </NavLink></SuperButton>
-            <SuperButton> <NavLink to={PATH.REGISTRATION}>Registration </NavLink></SuperButton>
-            <SuperButton> <NavLink to={PATH.TEST}>Test </NavLink></SuperButton>
-            <SuperButton> <NavLink to={PATH.ERROR_404}>Error </NavLink></SuperButton>
-            <SuperButton> <NavLink to={PATH.CHECK_EMAIL}>Check Email </NavLink></SuperButton>
+            {!isAuth && <SuperButton><NavLink to={PATH.LOGIN}>Login </NavLink></SuperButton>}
+            {isAuth && <SuperButton><NavLink to={PATH.PROFILE}>Profile </NavLink></SuperButton>}
         </div>
     )
 }

@@ -15,6 +15,12 @@ export const Login = () => {
     const [email, setEmail] = useState('akayuda93@gmail.com')
     const [password, setPassword] = useState('qwerty12')
     const [rememberMe, setRememberMe] = useState(false)
+
+
+    const login = () => {
+        dispatch(setLoginTC(email, password, rememberMe))
+
+    }
     const onChangeEmail = (e: React.FormEvent<HTMLInputElement>) => {
         setEmail(e.currentTarget.value)
 
@@ -37,18 +43,31 @@ export const Login = () => {
                 <h2>Sign In</h2>
                 <div>
 
-                    <div><SuperInputText value={email} onChange={onChangeEmail} type={'email'} placeholder={'Email'}/>
+                    <div><SuperInputText
+                        onEnter={login}
+                        value={email}
+                        onChange={onChangeEmail}
+                        type={'email'}
+                        placeholder={'Email'}/>
                     </div>
-                    <div><SuperInputText value={password} onChange={onChangePassword} type={'password'}
-                                         placeholder={'Password'}/></div>
-                    <SuperCheckbox defaultChecked={rememberMe} onChange={onChangeRememberMe}>Remember me</SuperCheckbox>
+                    <div><SuperInputText
+                        onEnter={login}
+                        value={password}
+                        onChange={onChangePassword}
+                        type={'password'}
+                        placeholder={'Password'}/></div>
+                    <SuperCheckbox
+                        defaultChecked={rememberMe}
+                        onChange={onChangeRememberMe}>
+
+                        Remember me
+                    </SuperCheckbox>
                 </div>
                 <div>
                     <NavLink to={PATH.NEW_PASSWORD}>Forgot Password</NavLink>
                 </div>
-                <div><SuperButton onClick={() => {
-                    dispatch(setLoginTC(email, password, rememberMe))
-                }}>Login</SuperButton></div>
+                <div>
+                    <SuperButton onClick={login}>Login</SuperButton></div>
                 <div>Don't have an account?</div>
                 <div>
                     <NavLink to={PATH.REGISTRATION}>Sign Up</NavLink>

@@ -5,6 +5,7 @@ import {AppRootStateType} from "../../bll/store";
 import {Navigate} from "react-router-dom";
 import {PATH} from "../../Header/Header";
 import {logoutUserTC} from "../../bll/reducers/login-reducer";
+import style from './profile.module.css'
 
 export const Profile = () => {
     const dispatch = useDispatch()
@@ -18,13 +19,16 @@ export const Profile = () => {
     }
     return (
         <div>
-            <div>Profile</div>
-            <h3>{name}</h3>
-            {avatar && <div><img src={avatar}/></div>}
-            <SuperButton onClick={() => {
-                dispatch(logoutUserTC())
 
-            }}>Logout</SuperButton>
+            <div className={style.profile}>
+                <h1>{name}</h1>
+                {avatar && <div><img alt={'avatar'} src={avatar}/></div>}
+                <SuperButton onClick={() => {
+                    dispatch(logoutUserTC())
+
+                }}>Logout</SuperButton>
+            </div>
+
         </div>
     )
 }
