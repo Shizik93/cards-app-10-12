@@ -7,7 +7,7 @@ export const NewPasswordAPI = {
         return initial.post<AxiosForgotPasswordType>('/auth/forgot', {
             email,
             from: 'AlexKayuda',
-            message: `<div style="background-color: lime; padding: 15px">	error: string;password recovery link: 	}<a href='https://shizik93.github.io/cards-app-10-12/#/set-new-password/$token$'>link</a></div>`
+            message: `<div style="background-color: lime; padding: 15px">	error: string;password recovery link: 	}<a href='https://shizik93.github.io/cards-app-10-12/#/new-password/$token$'>link</a></div>`
         }, {})
     },
     setNewPassword(password: string,resetPasswordToken:string) {
