@@ -1,5 +1,6 @@
 import {Dispatch} from "redux";
 import {RegAPI} from "../../API/RegAPI";
+import {setIsLoading} from "./app-reducer";
 
 const initialState: initialStateType = {
     error: '',
@@ -41,11 +42,15 @@ export const setRegistrationError = (error: string) => {
 }
 type setErrorType = ReturnType<typeof setRegistrationError>
 export const RegisteredUserTC = (email: string, password: string) => (dispatch: Dispatch) => {
+    dispatch(setIsLoading(true))
     RegAPI.register(email, password).then(() => {
         dispatch(setRegisteredSuccessfully())
     })
         .catch(() => {
             dispatch(setRegistrationError("Email or password are invalid. Please, try registration again"))
+        })
+        .finally(() => {
+            dispatch(setIsLoading(false))
         })
 
 }

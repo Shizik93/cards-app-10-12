@@ -32,7 +32,7 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         <input
         type={'checkbox'}
         onChange={onChangeCallback}
-        className={finalInputClassName}
+        className={className?className:finalInputClassName}
 
         {...restProps} // отдаём инпуту остальные пропсы если они есть (checked например там внутри)
         />

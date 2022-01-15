@@ -9,28 +9,31 @@ import {useParams} from "react-router-dom";
 
 export const NewPassword = () => {
     type useParamsType = {
-        tokenId:string | undefined
+        tokenId: string | undefined
     }
 
-    const dispatch=useDispatch()
-    const newPass=useSelector((state:AppRootStateType)=>state.restorePassword.newPass)
-    const [newPassword,setNewPassword]=useState('')
-    const onChangeNewPassword=(e: React.FormEvent<HTMLInputElement>)=>{
+    const dispatch = useDispatch()
+    const newPass = useSelector((state: AppRootStateType) => state.restorePassword.newPass)
+    const [newPassword, setNewPassword] = useState('')
+    const onChangeNewPassword = (e: React.FormEvent<HTMLInputElement>) => {
         setNewPassword(e.currentTarget.value)
 
     }
-    const {tokenId}:useParamsType = useParams()
-    debugger
+    const {tokenId}: useParamsType = useParams()
     return (
         <div>
             <div className={style.newPassword}>
                 <h1>It-incubator</h1>
                 <h2>Create new password</h2>
-                <div><SuperInputText onChange={onChangeNewPassword} type={'password'} placeholder={'Password'}/></div>
-                <div className={style.text}><span>Create new password and we will send you further instructions to email</span></div>
-                <SuperButton onClick={()=>{
-                    if(tokenId)
-                    dispatch(newPasswordTC(newPassword,tokenId))}}>Create new password</SuperButton>
+                <div><SuperInputText defaultValue={newPassword} onChange={onChangeNewPassword} type={'password'} placeholder={'Password'}/></div>
+                <div className={style.text}>
+                    <span>Create new password and we will send you further instructions to email</span></div>
+                <SuperButton
+                    className={style.superButton}
+                    onClick={() => {
+                    if (tokenId)
+                        dispatch(newPasswordTC(newPassword, tokenId))
+                }}>Create new password</SuperButton>
             </div>
         </div>
     )

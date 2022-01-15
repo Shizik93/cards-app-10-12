@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import SuperButton from "../../common/c2-SuperButton/SuperButton";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
@@ -9,7 +9,9 @@ import style from './profile.module.css'
 
 export const Profile = () => {
     const dispatch = useDispatch()
+    const [editableMode, setEditableMode] = useState(false)
     const name = useSelector((state: AppRootStateType) => state.login.name)
+    const [userName, setUserName] = useState(name ? name : '')
     const avatar = useSelector((state: AppRootStateType) => state.login.avatar)
     const isAuth = useSelector((state: AppRootStateType) => state.login.isAuth)
     if (!isAuth) {
@@ -21,12 +23,19 @@ export const Profile = () => {
         <div>
 
             <div className={style.profile}>
-                <h1>{name}</h1>
+
+                {editableMode
+                    ?
+                    <input autoFocus={true} onChange={(e) => setUserName(e.currentTarget.value)} placeholder={userName}
+                           onBlur={() => setEditableMode(false)}/>
+                    : <h1 onDoubleClick={() => setEditableMode(true)}>{userName}</h1>}
                 {avatar && <div><img alt={'avatar'} src={avatar}/></div>}
-                <SuperButton onClick={() => {
+                <SuperButton className={style.button} onClick={() => {
                     dispatch(logoutUserTC())
 
                 }}>Logout</SuperButton>
+
+
             </div>
 
         </div>

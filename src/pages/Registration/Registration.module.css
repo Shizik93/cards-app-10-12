@@ -1,4 +1,4 @@
-.registration{
+.registration {
     border-radius: 20px;
     margin-top: 50px;
     display: flex;
@@ -7,9 +7,59 @@
     flex-direction: column;
     width: 413px;
     height: 600px;
-    background: #3bb365;
+    background: #F9F9FE;
 }
-.error{
+
+.error {
     text-align: center;
     width: 300px;
+}
+
+.superButton {
+    width: 124px;
+    height: 36px;
+    background-color: #D7D8EF;
+    border-radius: 30px;
+    color: #21268F;
+    box-shadow: none;
+}
+
+.superButton:hover {
+    background-color: #e1e2fa
+}
+
+.superButtonReg {
+    width: 187px;
+    height: 36px;
+
+}
+
+.passwordBlock {
+    display: flex;
+    align-items: flex-end;
+}
+
+.password {
+    width: 315px;
+}
+
+.checkboxEye {
+    margin: 0px;
+    border: none;
+    border-bottom: 1px solid black;
+    box-sizing: content-box;
+    background-image: url('../Login/visibility.png');
+    appearance: none;
+    width: 32px;
+    height: 30px;
+    background-repeat: no-repeat;
+}
+
+.checkboxEye:checked {
+    background-image: url('../Login/open-eye.png');
+}
+.buttonBox{
+    width: 346px;
+    display: flex;
+    justify-content: space-between;
 }

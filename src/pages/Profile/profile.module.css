@@ -7,5 +7,16 @@
     flex-direction: column;
     width: 413px;
     height: 540px;
-    background: #3bb365;
+    background: #F9F9FE;
+}
+.button{
+width: 124px;
+    height: 36px;
+    border-radius: 30px;
+    background-color: #D7D8EF;
+    color: #21268F;
+    box-shadow: none;
+}
+.button:hover{
+    background-color: #e1e2fa
 }

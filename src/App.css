@@ -5,4 +5,10 @@
     flex-direction: column;
 
 }
-
+.App a{
+    text-decoration: none;
+    color: #21268F;
+}
+.App a:visited{
+    color: #21268F;
+}

@@ -14,6 +14,8 @@ export const Registration = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false)
     const onChangeEmail = (e: React.FormEvent<HTMLInputElement>) => {
         setEmail(e.currentTarget.value)
     }
@@ -24,6 +26,12 @@ export const Registration = () => {
     const onChangeConfirmPassword = (e: React.FormEvent<HTMLInputElement>) => {
         setConfirmPassword(e.currentTarget.value)
 
+    }
+    const changeShowPassword = (e: React.FormEvent<HTMLInputElement>) => {
+        setShowPassword(e.currentTarget.checked)
+    }
+    const changeShowConfirmPassword = (e: React.FormEvent<HTMLInputElement>) => {
+        setShowConfirmPassword(e.currentTarget.checked)
     }
     const fetchData = () => {
         if (password !== confirmPassword) {
@@ -45,22 +53,36 @@ export const Registration = () => {
                                          type={'email'}
                                          onChange={onChangeEmail}
                                          placeholder={'Email'}/></div>
-                    <div><SuperInputText
-                        value={password} onChange={onChangePassword}
-                        type={'password'}
-                        placeholder={'Password'}/></div>
-                    <div><SuperInputText
-                        value={confirmPassword}
-                        type={'password'}
-                        onChange={onChangeConfirmPassword}
-                        placeholder={'Confirm password'}/></div>
+                    <div className={style.passwordBlock}>
+
+                        <SuperInputText
+                            className={style.password}
+                            value={password}
+                            onChange={onChangePassword}
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder={'Password'}/>
+                        <input className={style.checkboxEye}
+                               type={'checkbox'}
+                               defaultChecked={showPassword}
+                               onClick={changeShowPassword}/></div>
+                    <div className={style.passwordBlock}>
+                        <SuperInputText
+                            className={style.password}
+                            value={confirmPassword}
+                            type={showConfirmPassword ? 'text' : 'password'}
+                            onChange={onChangeConfirmPassword}
+                            placeholder={'Confirm password'}/>
+                        <input className={style.checkboxEye}
+                               type={'checkbox'}
+                               defaultChecked={showConfirmPassword}
+                               onClick={changeShowConfirmPassword}/></div>
 
 
                 </div>
                 <div className={style.error}>{error && error}</div>
-                <div>
-                    <SuperButton>Cancel</SuperButton>
-                    <SuperButton onClick={fetchData}>Register</SuperButton>
+                <div className={style.buttonBox}>
+                    <SuperButton className={style.superButton}>Cancel</SuperButton>
+                    <SuperButton className={style.superButtonReg} onClick={fetchData}>Register</SuperButton>
                 </div>
 
             </div>

@@ -5,7 +5,7 @@ import SuperButton from "../../common/c2-SuperButton/SuperButton";
 import {forgotNewPasswordTC} from "../../bll/reducers/restorePassword-reducer";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
-import {Navigate} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import {PATH} from "../../Header/Header";
 
 export const RestorePassword = () => {
@@ -26,14 +26,15 @@ export const RestorePassword = () => {
                 <h1>It-incubator</h1>
                 <h2>Forgot your password?</h2>
                 <div><SuperInputText defaultValue={email} onChange={onChangeEmail} placeholder={'Email'}/></div>
-                <div className={style.text}>Enter your email address and we will send you further instructions</div>
+                <div className={style.text_1}>Enter your email address and we will send you further instructions</div>
                 <div><SuperButton
+                    className={style.superButton}
                     onClick={() => {
                         dispatch(forgotNewPasswordTC(email))
 
                     }}>Send Instructions</SuperButton></div>
-                <div className={style.text}>Did you remember your password?</div>
-                <div><SuperButton>Try logging in</SuperButton></div>
+                <div className={style.text_2}>Did you remember your password?</div>
+                <div><Link to={PATH.LOGIN}>Try logging in</Link> </div>
             </div>
         </div>
     )

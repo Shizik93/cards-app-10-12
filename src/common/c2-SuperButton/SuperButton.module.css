@@ -1,31 +1,32 @@
 
 .default {
-
-    -webkit-border-radius: 48px;
-    -moz-border-radius: 48px;
-    border-radius: 48px;
-    -webkit-box-shadow: 0px 0px 10px #666666;
-    -moz-box-shadow: 0px 0px 10px #666666;
-    box-shadow: 0px 0px 10px #666666;
-    font-family: Arial;
-    color: white;
+    border: none;
+    border-radius: 30px;
+    background: #21268F;
+    box-shadow: 0px 4px 18px rgba(33, 38, 143, 0.35), inset 0px 1px 0px rgba(255, 255, 255, 0.3);
+    font-family: SF UI Display;
+    font-style: normal;
+    font-weight: 500;
     font-size: 16px;
-    padding: 6px 16px 6px 15px;
-    background: #8cb38e;
-    border: solid #636e54 5px;
-    text-decoration: none;
+    line-height: 19px;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #ECECF9;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .default:hover {
-    background: #3bb365;
-    background-image: -webkit-linear-gradient(top, #3bb365, #39664e);
-    background-image: -moz-linear-gradient(top, #3bb365, #39664e);
-    background-image: -ms-linear-gradient(top, #3bb365, #39664e);
-    background-image: -o-linear-gradient(top, #3bb365, #39664e);
-    background-image: linear-gradient(to bottom, #3bb365, #39664e);
-    text-decoration: none;
+    background: #151dc5;
 }
+.default a{
+    color: white;
 
+}
+.default a:visited{
+    color: white;
+
+}
 .red {
     -webkit-border-radius: 48px;
     -moz-border-radius: 48px;

@@ -1,5 +1,5 @@
 .checkEmail{
-    border-radius: 20px;
+    border-radius: 8px;
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
@@ -7,7 +7,7 @@
     flex-direction: column;
     width: 413px;
     height: 468px;
-    background: #3bb365;
+    background: #F9F9FE;
 }
 .text{
     text-align: center;
