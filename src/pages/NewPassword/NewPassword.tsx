@@ -8,9 +8,7 @@ import {useState} from "react";
 import {useParams} from "react-router-dom";
 
 export const NewPassword = () => {
-    type useParamsType = {
-        tokenId: string | undefined
-    }
+
 
     const dispatch = useDispatch()
     const newPass = useSelector((state: AppRootStateType) => state.restorePassword.newPass)
@@ -19,7 +17,7 @@ export const NewPassword = () => {
         setNewPassword(e.currentTarget.value)
 
     }
-    const {tokenId}: useParamsType = useParams()
+    const {tokenId} = useParams()
     return (
         <div>
             <div className={style.newPassword}>

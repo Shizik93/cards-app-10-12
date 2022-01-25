@@ -33,7 +33,7 @@ export const RestorePassword = () => {
                         dispatch(forgotNewPasswordTC(email))
 
                     }}>Send Instructions</SuperButton></div>
-                <div className={style.text_2}>Did you remember your password?</div>
+                <div className={`${style.text_1} ${style.text_2}`}>Did you remember your password?</div>
                 <div><Link to={PATH.LOGIN}>Try logging in</Link> </div>
             </div>
         </div>

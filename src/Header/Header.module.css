@@ -1,0 +1,23 @@
+.main{
+    justify-content: center;
+    display: flex;
+    height: 60px;
+    width: 100%;
+    background: #EBE0E9;
+}
+.packsList{
+    display: flex;
+    justify-content: center;
+    width: 173px;
+    height: 60px;
+    background-color:#EBE0E9;
+}
+.profile{
+    display: flex;
+    justify-content: center;
+    width: 173px;
+    height: 60px;
+    background-color:#EBE0E9;
+    align-items: center;
+}
+

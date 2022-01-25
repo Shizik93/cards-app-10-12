@@ -16,9 +16,19 @@
 }
 
 .text {
-    border: none;
-    border-bottom: 1px solid black;
 
+    font-family: SF UI Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    text-align: center;
+
+    color: #2D2E46;
+
+    opacity: 0.5;
 }
 
 

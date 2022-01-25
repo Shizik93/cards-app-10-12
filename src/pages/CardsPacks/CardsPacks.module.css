@@ -1,0 +1,47 @@
+.cardsPacksContainer {
+    width: 1008px;
+    height: 636px;
+    display: flex;
+    background: #FEFEFF;
+    border-radius: 8px;
+    margin-top: 24px;
+
+}
+
+
+.settingsPacks {
+    width: 243px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.settingsButtons {
+    display: flex;
+    width: 196px;
+    height: 36px;
+
+}
+
+.settingsButtons button {
+    width: 98px;
+    border-radius: 0;
+    background: #9A91C8;
+    box-shadow: none;
+}
+
+.packsList{
+    display: flex;
+    flex-direction: column;
+
+}
+.superInput{
+    width: 461px;
+    height: 36px;
+    border-radius: 2px;
+    opacity: 0.5;
+    background:#ECECF9 ;
+    border:1px solid #635D80;
+}

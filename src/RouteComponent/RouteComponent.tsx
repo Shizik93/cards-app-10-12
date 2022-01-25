@@ -9,6 +9,7 @@ import {Test} from "../pages/Test/Test";
 import {CheckEmail} from "../pages/CheckEmail/CheckEmail";
 import React from "react";
 import {NewPassword} from "../pages/NewPassword/NewPassword";
+import {CardsPacks} from "../pages/CardsPacks/CardsPacks";
 
 export const RouteComponent = () => {
     return (
@@ -23,6 +24,7 @@ export const RouteComponent = () => {
                 <Route element={<Test/>} path={PATH.TEST}/>
                 <Route element={<CheckEmail/>} path={PATH.CHECK_EMAIL}/>
                 <Route element={<NewPassword/>} path={PATH.NEW_PASSWORD}/>
+                <Route element={<CardsPacks/>} path={PATH.CARDS_PACKS}/>
                 <Route element={<Error/>} path={'*'}/>
 
 

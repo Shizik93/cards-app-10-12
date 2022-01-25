@@ -1,5 +1,5 @@
 .registration {
-    border-radius: 20px;
+    border-radius: 8px;
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
@@ -10,11 +10,12 @@
     background: #F9F9FE;
 }
 
+
 .error {
     text-align: center;
     width: 300px;
 }
-
+{}
 .superButton {
     width: 124px;
     height: 36px;

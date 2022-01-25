@@ -5,7 +5,7 @@ import SuperButton from "../../common/c2-SuperButton/SuperButton";
 import {RegisteredUserTC, setRegistrationError} from "../../bll/reducers/registration-reducer";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
-import {Navigate} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import {PATH} from "../../Header/Header";
 
 export const Registration = () => {

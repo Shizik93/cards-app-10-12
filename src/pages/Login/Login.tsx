@@ -89,12 +89,12 @@ export const Login = () => {
                 </div>
 
 
-                <div>
-                    <NavLink to={PATH.RESTORE_PASSWORD}>Forgot Password</NavLink>
+                <div style={{width:'347px', display:'flex',justifyContent:'flex-end'}}>
+                    <NavLink  to={PATH.RESTORE_PASSWORD}>Forgot Password</NavLink>
                 </div>
                 <div>
                     <SuperButton className={style.superButton} onClick={login}>Login</SuperButton></div>
-                <div>Don't have an account?</div>
+                <div className={style.text}>Don't have an account?</div>
                 <div>
                     <NavLink to={PATH.REGISTRATION}>Sign Up</NavLink>
                 </div>

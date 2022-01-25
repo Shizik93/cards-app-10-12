@@ -1,5 +1,4 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
-import {errorReducer} from "./reducers/error-reducer";
 import {loginReducer} from "./reducers/login-reducer";
 import {registrationReducer} from "./reducers/registration-reducer";
 import {restorePasswordReducer} from "./reducers/restorePassword-reducer";
@@ -8,7 +7,6 @@ import {appReducer} from "./reducers/app-reducer";
 
 const rootReducer=combineReducers({
     app:appReducer,
-    error:errorReducer,
     login:loginReducer,
     registration:registrationReducer,
     restorePassword:restorePasswordReducer
