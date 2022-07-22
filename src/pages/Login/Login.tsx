@@ -12,8 +12,8 @@ import {AppRootStateType} from "../../bll/store";
 export const Login = () => {
     const isAuth = useSelector((state: AppRootStateType) => state.login.isAuth)
     const dispatch = useDispatch()
-    const [email, setEmail] = useState('akayuda93@gmail.com')
-    const [password, setPassword] = useState('qwerty12')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const [rememberMe, setRememberMe] = useState(false)
 
 
